@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 // 1. Ativa a sessão para controle de acesso/login
@@ -94,3 +95,5 @@ function verificarAcesso() {
         exit;
     }
 }
+=======
+>>>>>>> 09c0003d0e1d26b790e88d29855d74c4f3911090
