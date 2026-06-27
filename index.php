@@ -65,10 +65,23 @@ switch ($param) {
         break;
 
     // --- ROTAS DO CRUD 2: CLIENTES ---
+    // Adicione ou certifique-se de que estes blocos estão ativos no seu switch do index.php:
     case 'clientes':
         verificarAcesso();
-        $controller = new App\Controllers\ClienteController();
+        $controller = new \App\Controllers\ClienteController();
         $controller->index();
+        break;
+
+    case 'cliente-salvar':
+        verificarAcesso();
+        $controller = new \App\Controllers\ClienteController();
+        $controller->salvar();
+        break;
+
+    case 'cliente-excluir':
+        verificarAcesso();
+        $controller = new \App\Controllers\ClienteController();
+        $controller->excluir();
         break;
 
     // --- ROTAS DO CRUD 3: AGENDAMENTOS (CARRINHO/PEDIDOS) ---
