@@ -5,8 +5,9 @@ Este projeto é um sistema web completo para gerenciamento administrativo e agen
 O sistema conta com controle de acesso (login), um painel (dashboard) com indicadores em tempo real e 3 telas de gerenciamento (CRUDs) integradas: Procedimentos Estéticos, Clientes e Agendamentos. Além disso, o banco de dados possui regras inteligentes como travas de horários lotados e histórico de preços.
 
 ---
-## Dados de LOGIN do Projeto:
-usuario: admin
+## Dados de LOGIN do Projeto
+
+usuario: admin 
 senha: admin123
 
 ## 🔗 Links do Projeto
