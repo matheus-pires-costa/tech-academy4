@@ -17,7 +17,7 @@ class Conexao
                 $host = 'localhost';
                 $dbname = 'clinica_estetica';
                 $user = 'root';
-                $password = ''; 
+                $password = 'Matheuszk@123'; 
 
                 self::$instance = new PDO(
                     "mysql:host=$host;dbname=$dbname;charset=utf8",
