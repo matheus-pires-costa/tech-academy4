@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - CN Estética</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<<<<<<< HEAD
     <link href="/tech-academy4/App/public/css/style.css" rel="stylesheet">
-=======
-    <link href="public/css/login.css" rel="stylesheet">
->>>>>>> 71ff5b80807b98300a61810202af5aff1d59eb9e
 </head>
 <body>
 

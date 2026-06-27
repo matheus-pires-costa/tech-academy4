@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 99e99fdffd80b98205a9b361fc89cb04e96719e8
->>>>>>> cba604e425dad54ef8d43fc843bb081c4d541040
->>>>>>> 71ff5b80807b98300a61810202af5aff1d59eb9e
 <?php
 
 // 1. Ativa a sessão para controle de acesso/login
@@ -18,19 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 // 2. Autoload Simples para carregar as classes das pastas automaticamente
 spl_autoload_register(function ($classe) {
     // Converte os Namespaces (ex: App\Controllers\LoginController) no caminho real do arquivo
-<<<<<<< HEAD
     $caminho = str_replace('\\', '/', $classe) . '.php';
-=======
-<<<<<<< HEAD
-    $caminho = str_replace('\\', '/', $classe) . '.php';
-=======
-<<<<<<< HEAD
-    $caminho = str_replace('\\', '/', $classe) . '.php';
-=======
-    $caminho = __DIR__ . '/' . str_replace('\\', '/', $classe) . '.php';
->>>>>>> 99e99fdffd80b98205a9b361fc89cb04e96719e8
->>>>>>> cba604e425dad54ef8d43fc843bb081c4d541040
->>>>>>> 71ff5b80807b98300a61810202af5aff1d59eb9e
     if (file_exists($caminho)) {
         require_once $caminho;
     }
@@ -115,18 +93,4 @@ function verificarAcesso() {
         header('Location: index.php?param=login');
         exit;
     }
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-}
-=======
-<<<<<<< HEAD
-}
-=======
-}
-=======
->>>>>>> 09c0003d0e1d26b790e88d29855d74c4f3911090
->>>>>>> 99e99fdffd80b98205a9b361fc89cb04e96719e8
->>>>>>> cba604e425dad54ef8d43fc843bb081c4d541040
->>>>>>> 71ff5b80807b98300a61810202af5aff1d59eb9e
