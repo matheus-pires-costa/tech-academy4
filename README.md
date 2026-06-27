@@ -9,7 +9,7 @@ O sistema conta com controle de acesso (login), um painel (dashboard) com indica
 ## 🔗 Links do Projeto
 
 * **Repositório no GitHub:** [INSIRA_O_LINK_DO_GITHUB_AQUI]
-* **Link do Site (Produção/Deploy):** [INSIRA_O_LINK_DO_SITE_AQUI_SE_HOUVER]
+* **Link do Site (Produção/Deploy):** cnesteticaadm.infinityfree.io
 
 ---
 
