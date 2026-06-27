@@ -38,9 +38,11 @@ switch ($param) {
         break;
 
     // --- ROTAS DO PAINEL ADMINISTRATIVO (ÁREA PROTEGIDA) ---
+    // Procure pelo case 'dashboard' e substitua por este:
     case 'dashboard':
         verificarAcesso();
-        // Aqui chamaremos o AdminController para exibir o Dashboard de 4 pontos
+        $controller = new \App\Controllers\AdminController();
+        $controller->index();
         break;
 
     // --- ROTAS DO CRUD 1: PROCEDIMENTOS ESTÉTICOS ---
