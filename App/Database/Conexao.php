@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 namespace App\Database;
@@ -33,4 +34,18 @@ class Conexao
         }
         return self::$instance;
     }
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+<<<<<<< HEAD
+}
+=======
+}
+=======
+>>>>>>> c274d19db61f7c75a44bdfdd38f569f1293d9ac5
+>>>>>>> 09c0003d0e1d26b790e88d29855d74c4f3911090
+>>>>>>> 99e99fdffd80b98205a9b361fc89cb04e96719e8
+>>>>>>> cba604e425dad54ef8d43fc843bb081c4d541040
