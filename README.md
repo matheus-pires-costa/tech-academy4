@@ -9,7 +9,7 @@ O sistema conta com controle de acesso (login), um painel (dashboard) com indica
 ## 🔗 Links do Projeto
 
 * **Repositório no GitHub:** https://github.com/matheus-pires-costa/tech-academy4
-* **Link do Site (Produção/Deploy):** cnesteticaadm.infinityfree.io
+* **Link do Site (Produção/Deploy):** https://cnesteticaadm.infinityfree.io
 
 ---
 
