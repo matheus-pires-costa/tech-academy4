@@ -6,9 +6,8 @@ O sistema conta com controle de acesso (login), um painel (dashboard) com indica
 
 ---
 ## Dados de LOGIN do Projeto:
-
-usuario: admin;
-senha: admin123;
+usuario: admin
+senha: admin123
 
 ## 🔗 Links do Projeto
 
