@@ -7,39 +7,30 @@ use PDOException;
 
 class Conexao
 {
-    private static $instancia;
+    private static $instance = null;
 
     public static function getConnection()
     {
-
-        try {
-            $host = "sql210.infinityfree.com";
-            $dbname = "if0_41731577_clinica_estetica";
-            $usuario = "if0_41731577";
-            $senha = "Matheus2099";
-
-            self::$instancia = new PDO(
-                "mysql:host=$host;dbname=$dbname;charset=utf8",
-                $usuario,
-                $senha
-            );
-
-            self::$instancia->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            die("Erro na conexão: " . $e->getMessage());
-        }
-        if (!isset(self::$instancia)) {
+        if (self::$instance === null) {
             try {
-                self::$instancia = new PDO(
-                    "mysql:host=localhost;dbname=clinica_estetica;charset=utf8",
-                    "root",
-                    ""
+                // Ajuste as credenciais se o seu MySQL local tiver senha
+                $host = 'localhost';
+                $dbname = 'clinica_estetica';
+                $user = 'root';
+                $password = ''; 
+
+                self::$instance = new PDO(
+                    "mysql:host=$host;dbname=$dbname;charset=utf8",
+                    $user,
+                    $password
                 );
-                self::$instancia->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                
+                // Habilita tratamento de erros do PDO
+                self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (PDOException $e) {
-                die("Erro na conexão: " . $e->getMessage());
+                die("Erro na conexão com o banco de dados: " . $e->getMessage());
             }
         }
-        return self::$instancia;
+        return self::$instance;
     }
 }
