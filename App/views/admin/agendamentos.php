@@ -37,6 +37,11 @@
                 <div class="col-lg-4">
                     <div class="card card-indicador bg-white p-4">
                         <h5 class="fw-bold mb-3 text-purple">Novo Agendamento</h5>
+                <?php if (isset($_GET['erro_agenda'])): ?>
+                    <div class="alert alert-danger p-2 small" role="alert">
+                        ⚠️ <strong>Erro:</strong> Este horário/turno já está lotado! Escolha outro período.
+                    </div>
+                <?php endif; ?>
                         <form action="index.php?param=agendamento-salvar" method="POST">
                             
                             <div class="mb-3">
