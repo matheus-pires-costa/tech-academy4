@@ -87,8 +87,20 @@ switch ($param) {
     // --- ROTAS DO CRUD 3: AGENDAMENTOS (CARRINHO/PEDIDOS) ---
     case 'agendamentos':
         verificarAcesso();
-        $controller = new App\Controllers\AgendamentoController();
+        $controller = new \App\Controllers\AgendamentoController();
         $controller->index();
+        break;
+
+    case 'agendamento-salvar':
+        verificarAcesso();
+        $controller = new \App\Controllers\AgendamentoController();
+        $controller->salvar();
+        break;
+
+    case 'agendamento-excluir':
+        verificarAcesso();
+        $controller = new \App\Controllers\AgendamentoController();
+        $controller->excluir();
         break;
 
     // --- ROTA PADRÃO SE O PARAM NÃO EXISTIR ---
