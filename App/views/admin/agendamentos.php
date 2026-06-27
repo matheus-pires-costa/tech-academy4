@@ -11,7 +11,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <!-- MENU LATERAL REUTILIZADO -->
+
         <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse p-3">
             <div class="text-center my-4">
                 <h4>CN Estética</h4>
@@ -28,12 +28,12 @@
             <a href="index.php?param=logout" class="btn btn-outline-light w-100 py-2">Sair / Logout</a>
         </nav>
 
-        <!-- CONTEÚDO PRINCIPAL -->
+
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-5">
             <h1 class="h2 mb-4 text-purple" style="font-weight: 700;">Gerenciar Carrinho de Agendamentos</h1>
 
             <div class="row g-4">
-                <!-- COLUNA 1: FORMULÁRIO -->
+
                 <div class="col-lg-4">
                     <div class="card card-indicador bg-white p-4">
                         <h5 class="fw-bold mb-3 text-purple">Novo Agendamento</h5>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
 
-                <!-- COLUNA 2: LISTAGEM -->
+
                 <div class="col-lg-8">
                     <div class="card card-indicador bg-white p-4">
                         <h5 class="fw-bold mb-3 text-purple">Sessões Marcadas</h5>

@@ -19,7 +19,7 @@ class AgendamentoController
     {
         $agendamentos = $this->model->listarTodos();
         
-        // Carrega os outros models para preencher os selects do formulário
+
         $clienteModel = new Cliente();
         $procedimentoModel = new Procedimento();
         

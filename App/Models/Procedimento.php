@@ -14,7 +14,7 @@ class Procedimento
         $this->db = Conexao::getConnection();
     }
 
-    // Lista todos os procedimentos cadastrados
+
     public function listarTodos()
     {
         $sql = "SELECT * FROM procedimentos ORDER BY id DESC";
@@ -22,7 +22,7 @@ class Procedimento
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Insere um novo procedimento
+
     public function cadastrar($dados)
     {
         $sql = "INSERT INTO procedimentos (nome_procedimento, descricao, preco, duracao_minutos, imagem) 
@@ -38,7 +38,7 @@ class Procedimento
         ]);
     }
 
-    // Exclui um procedimento por ID
+   
     public function deletar($id)
     {
         $sql = "DELETE FROM procedimentos WHERE id = :id";

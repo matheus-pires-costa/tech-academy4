@@ -13,23 +13,23 @@ class ProcedimentoController
         $this->model = new Procedimento();
     }
 
-    // Exibe a tela principal do CRUD (Listagem + Formulário)
+
     public function index()
     {
         $procedimentos = $this->model->listarTodos();
         require_once 'App/Views/admin/procedimentos.php';
     }
 
-    // Processa o formulário de cadastro
+
     public function salvar()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $dados = [
                 'nome_procedimento' => $_POST['nome_procedimento'] ?? '',
                 'descricao'         => $_POST['descricao'] ?? '',
-                'preco'             => str_replace(',', '.', $_POST['preco'] ?? '0'), // Ajusta centavos se digitarem vírgula
+                'preco'             => str_replace(',', '.', $_POST['preco'] ?? '0'), 
                 'duracao_minutos'   => (int)($_POST['duracao_minutos'] ?? 0),
-                'imagem'            => $_POST['imagem'] ?? null // Campo de string que você pediu para preencher
+                'imagem'            => $_POST['imagem'] ?? null 
             ];
 
             if (!empty($dados['nome_procedimento'])) {
@@ -41,7 +41,7 @@ class ProcedimentoController
         }
     }
 
-    // Processa a exclusão
+
     public function excluir()
     {
         $id = $_GET['id'] ?? null;

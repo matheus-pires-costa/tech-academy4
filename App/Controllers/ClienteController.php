@@ -13,14 +13,14 @@ class ClienteController
         $this->model = new Cliente();
     }
 
-    // Exibe a listagem de clientes e o formulário
+
     public function index()
     {
         $clientes = $this->model->listarTodos();
         require_once 'App/Views/admin/clientes.php';
     }
 
-    // Processa o cadastro de um novo cliente
+
     public function salvar()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -28,7 +28,7 @@ class ClienteController
                 'nome'    => $_POST['nome'] ?? '',
                 'usuario' => $_POST['usuario'] ?? '',
                 'email'   => $_POST['email'] ?? '',
-                'senha'   => $_POST['senha'] ?? 'cliente123' // Senha padrão caso não queira digitar no cadastro rápido
+                'senha'   => $_POST['senha'] ?? 'cliente123' 
             ];
 
             if (!empty($dados['nome']) && !empty($dados['usuario'])) {
@@ -40,7 +40,7 @@ class ClienteController
         }
     }
 
-    // Processa a exclusão de um cliente
+
     public function excluir()
     {
         $id = $_GET['id'] ?? null;

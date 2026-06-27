@@ -14,7 +14,7 @@ class Cliente
         $this->db = Conexao::getConnection();
     }
 
-    // Lista apenas os registros que são clientes
+
     public function listarTodos()
     {
         $sql = "SELECT id, nome, usuario, email, created_at FROM usuarios WHERE nivel = 'cliente' ORDER BY id DESC";
@@ -22,7 +22,7 @@ class Cliente
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Insere um novo cliente no banco
+
     public function cadastrar($dados)
     {
         $sql = "INSERT INTO usuarios (nome, usuario, email, senha, nivel) 
@@ -33,11 +33,11 @@ class Cliente
             ':nome'    => $dados['nome'],
             ':usuario' => $dados['usuario'],
             ':email'   => $dados['email'],
-            ':senha'   => $dados['senha'] // Em texto limpo para manter o padrão simples acordado
+            ':senha'   => $dados['senha'] 
         ]);
     }
 
-    // Exclui um cliente por ID
+
     public function deletar($id)
     {
         $sql = "DELETE FROM usuarios WHERE id = :id AND nivel = 'cliente'";

@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `clinica_estetica` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `clinica_estetica`;
 -- MySQL dump 10.13  Distrib 8.0.45, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: clinica_estetica
@@ -36,12 +34,11 @@ CREATE TABLE `agendamentos` (
   `status` enum('Pendente','Confirmado','Concluido','Cancelado') COLLATE utf8mb4_unicode_ci DEFAULT 'Pendente',
   PRIMARY KEY (`id`),
   KEY `fk_agendamento_servico` (`servico_id`),
-  KEY `fk_agendamento_cliente` (`cliente_id`),
-  CONSTRAINT `fk_agendamento_cliente` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`),
+  KEY `fk_agendamento_usuario` (`cliente_id`),
   CONSTRAINT `fk_agendamento_servico` FOREIGN KEY (`servico_id`) REFERENCES `servicos` (`id`),
-  CONSTRAINT `fk_cliente` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_agendamento_usuario` FOREIGN KEY (`cliente_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_servico` FOREIGN KEY (`servico_id`) REFERENCES `servicos` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,7 +47,7 @@ CREATE TABLE `agendamentos` (
 
 LOCK TABLES `agendamentos` WRITE;
 /*!40000 ALTER TABLE `agendamentos` DISABLE KEYS */;
-INSERT INTO `agendamentos` VALUES (1,'Matheus Pires Costa','44974002628','matheuszk264@gmail.com',NULL,NULL,'2026-07-31 00:00:00','Período selecionado: Manhã (09h-12h) - quero para as 11h','Pendente'),(2,'W+agner Pires','4499402517','carl.grimeszk@gmail.com',NULL,NULL,'2026-03-31 00:00:00','Período selecionado: Tarde (14h-18h) - quero para as 17h','Pendente'),(3,'Izabel Pires','4499999999','izabel123@gmail.com',NULL,NULL,'2026-06-24 00:00:00','Período selecionado: Tarde (14h-18h) - para as 18h','Pendente'),(4,'chayane','4497251717','chay@gmail.com',NULL,NULL,'2026-05-26 Tarde (14h-18h)','Período selecionado: Tarde (14h-18h) - as 18h','Pendente');
+INSERT INTO `agendamentos` VALUES (1,'Matheus Pires Costa','44974002628','matheuszk264@gmail.com',NULL,NULL,'2026-07-31 00:00:00','Período selecionado: Manhã (09h-12h) - quero para as 11h','Pendente'),(2,'W+agner Pires','4499402517','carl.grimeszk@gmail.com',NULL,NULL,'2026-03-31 00:00:00','Período selecionado: Tarde (14h-18h) - quero para as 17h','Pendente'),(3,'Izabel Pires','4499999999','izabel123@gmail.com',NULL,NULL,'2026-06-24 00:00:00','Período selecionado: Tarde (14h-18h) - para as 18h','Pendente'),(4,'chayane','4497251717','chay@gmail.com',NULL,NULL,'2026-05-26 Tarde (14h-18h)','Período selecionado: Tarde (14h-18h) - as 18h','Pendente'),(9,NULL,NULL,NULL,4,2,'sexta as 9h',NULL,'Pendente'),(10,NULL,NULL,NULL,3,3,'segunda as 18h',NULL,'Pendente'),(11,NULL,NULL,NULL,3,4,'segunda as 18h',NULL,'Pendente');
 /*!40000 ALTER TABLE `agendamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +91,7 @@ CREATE TABLE `procedimentos` (
   `duracao_minutos` int NOT NULL,
   `imagem` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,6 +100,7 @@ CREATE TABLE `procedimentos` (
 
 LOCK TABLES `procedimentos` WRITE;
 /*!40000 ALTER TABLE `procedimentos` DISABLE KEYS */;
+INSERT INTO `procedimentos` VALUES (2,'Limpeza de pele','limpeza profunda',120.00,60,''),(4,'dermaplaning','retirada dos pelos da face',67.00,30,'');
 /*!40000 ALTER TABLE `procedimentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +150,7 @@ CREATE TABLE `usuarios` (
   UNIQUE KEY `usuario` (`usuario`),
   UNIQUE KEY `email` (`email`),
   KEY `idx_usuario_login` (`usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,7 +159,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Matheus Admin','admin','admin@cnestetica.com.br','admin123','admin','2026-06-27 03:07:33');
+INSERT INTO `usuarios` VALUES (1,'Matheus Admin','admin','admin@cnestetica.com.br','admin123','admin','2026-06-27 03:07:33'),(3,'izaac soares','sayajin','izaac123@gmail.com','izaac123','cliente','2026-06-27 04:42:15'),(4,'matheus costa','matheusPires','matheuscosta@gmail.com','matheus123','cliente','2026-06-27 05:16:01');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -174,4 +172,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-27  0:15:26
+-- Dump completed on 2026-06-27  2:36:33

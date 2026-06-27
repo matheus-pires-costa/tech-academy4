@@ -14,13 +14,10 @@ class Usuario
         $this->db = Conexao::getConnection();
     }
 
-    /**
-     * Verifica se o usuário e senha existem no banco de dados.
-     * Retorna os dados do usuário se for bem-sucedido, ou false se falhar.
-     */
+
     public function autenticar($userInput, $senhaInput)
     {
-        // Graças ao ÍNDICE que criamos no SQL, essa busca em 'usuario' ou 'email' é ultra rápida
+        
         $sql = "SELECT id, nome, usuario, email, senha, nivel 
                 FROM usuarios 
                 WHERE (usuario = :user OR email = :user) 
@@ -33,7 +30,7 @@ class Usuario
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($usuario) {
-            // Verificação direta em texto limpo (para fins acadêmicos/simplicidade)
+      
             if ($senhaInput === $usuario['senha']) {
                 return $usuario;
             }

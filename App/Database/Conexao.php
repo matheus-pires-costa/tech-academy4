@@ -13,7 +13,7 @@ class Conexao
     {
         if (self::$instance === null) {
             try {
-                // Ajuste as credenciais se o seu MySQL local tiver senha
+
                 $host = 'localhost';
                 $dbname = 'clinica_estetica';
                 $user = 'root';
@@ -25,7 +25,7 @@ class Conexao
                     $password
                 );
                 
-                // Habilita tratamento de erros do PDO
+
                 self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (PDOException $e) {
                 die("Erro na conexão com o banco de dados: " . $e->getMessage());
